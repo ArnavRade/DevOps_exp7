@@ -17,8 +17,9 @@
         <sonar.host.url>http://localhost:9000</sonar.host.url>
     </properties>
 
-    <!-- Dependencies -->
+    <!-- ✅ SINGLE dependencies block -->
     <dependencies>
+
         <!-- JUnit for testing -->
         <dependency>
             <groupId>junit</groupId>
@@ -26,12 +27,27 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+
+        <!-- SLF4J Simple Logger -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.13</version>
+        </dependency>
+
     </dependencies>
 
     <!-- Build Plugins -->
     <build>
         <plugins>
-            <!-- SonarQube plugin for Maven -->
+            <!-- SonarQube plugin -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
