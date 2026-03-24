@@ -1,31 +1,26 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.Statement;
-
 public class App {
 
     public static void main(String[] args) {
 
-        String password = "admin123"; // Hardcoded credential
+        int unused = 10; // Unused variable
 
-        try {
-            Connection conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/test", "root", "root");
-
-            Statement stmt = conn.createStatement();
-
-            String userInput = "' OR '1'='1"; // Simulated input
-
-            // SQL Injection vulnerability
-            String query = "SELECT * FROM users WHERE username = '" + userInput + "'";
-
-            stmt.executeQuery(query);
-
-        } catch (Exception e) {
-            // Empty catch block
+        if (true) { // Always true condition
+            System.out.println("Always runs");
         }
 
         String text = null;
-        System.out.println(text.length()); // NullPointerException
+        System.out.println(text.length()); // NullPointerException (BUG)
+
+        try {
+            int x = 10 / 0; // Runtime error
+        } catch (Exception e) {
+            // Empty catch block (bad practice)
+        }
+
+        for (int i = 0; i < 10; i++) {
+        }
+
+        for (int i = 0; i < 10; i++) {
+        } // Duplicate code
     }
 }
