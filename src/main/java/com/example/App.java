@@ -13,6 +13,6 @@ public class App {
             System.out.println("The number is odd.");
         }
 
-        scanner.close();
+        scanner.close()
     }
 }
